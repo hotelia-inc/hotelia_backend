@@ -1,4 +1,4 @@
-const { faker } = require("@faker-js/faker");
+import { faker } from "@faker-js/faker";
 
 let hotels = [];
 for (let i = 0; i < 10; i++) {
@@ -53,17 +53,29 @@ for (let i = 0; i < 10; i++) {
       hasOutDoorPool: faker.datatype.boolean(),
       hasTaxiService: faker.datatype.boolean(),
     },
+    hotelPolicy: {
+      checkIn: "9:00am",
+      checkOut: "12:00 pm",
+      payment: ["Cash", "Cards", "Bank Transfer"],
+      cancelation: "Free 24 Hours Cancelation",
+    },
     hotelType: "Mid-Range",
     likes: faker.datatype.number(),
     images: {
       mainImageUrl: faker.image.imageUrl(),
-      imageGallery: [faker.image.imageUrl()],
+      imageGallery: [
+        faker.image.imageUrl(),
+        faker.image.imageUrl(),
+        faker.image.imageUrl(),
+        faker.image.imageUrl(),
+      ],
     },
   };
   hotels.push(hotelmodel);
 }
 
-module.exports = hotels;
+export default hotels;
+
 /*
 const review = {
   _id: faker.datatype.uuid(),

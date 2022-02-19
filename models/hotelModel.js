@@ -1,4 +1,4 @@
-var mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const hotelSchema = mongoose.Schema(
   {
@@ -144,6 +144,24 @@ const hotelSchema = mongoose.Schema(
       },
     },
 
+    hotelPolicy: {
+      checkIn: {
+        type: String,
+        required: true,
+      },
+      checkOut: {
+        type: String,
+        required: true,
+      },
+      payment: {
+        type: Array,
+        required: true,
+      },
+      cancelation: {
+        type: String,
+        required: true,
+      },
+    },
     hotelType: {
       type: String,
       required: true,
@@ -169,7 +187,7 @@ const hotelSchema = mongoose.Schema(
 );
 
 const Hotel = mongoose.model("Hotel", hotelSchema);
-module.exports = Hotel;
+export default Hotel;
 
 /*
 
