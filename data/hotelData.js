@@ -1,4 +1,4 @@
-import { faker } from "@faker-js/faker";
+const { faker } = require("@faker-js/faker");
 
 let hotels = [];
 for (let i = 0; i < 10; i++) {
@@ -74,7 +74,7 @@ for (let i = 0; i < 10; i++) {
   hotels.push(hotelmodel);
 }
 
-export default hotels;
+module.exports = hotels;
 
 /*
 const review = {
